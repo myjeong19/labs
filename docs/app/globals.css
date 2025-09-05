@@ -1,0 +1,6 @@
+@import "@repo/tailwind-config";
+@import "@repo/components/styles.css";
+
+a {
+  text-decoration: none;
+}
