@@ -1,24 +1,36 @@
 {
-  "name": "@myjeong19/components",
+  "name": "@repo/components",
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    "./styles.css": "./dist/index.css",
+    "./*": "./src/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build:components": "tsc",
+    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev:components": "tsc --watch"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/cli": "^4.1.13",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "@repo/tailwind-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.13",
+    "lucide-react": "^0.542.0",
+    "next": "^15.5.0",
+    "postcss": "^8.5.6",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.13"
   }
 }
